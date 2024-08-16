@@ -16,7 +16,8 @@ exports.loggerMessages = {
     watchRejected: createLogger("[ESBuild Watch]" /* prefix.watch */, 'Ошибка отслеживания', true),
     watchStarted: createLogger("[ESBuild Watch]" /* prefix.watch */, 'Началась сборка файлов'),
     watchFinished: createLogger("[ESBuild Watch]" /* prefix.watch */, 'Закончилась сборка файлов'),
-    removeOutdir: createLogger("[ESBuild]" /* prefix.default */, '♻️ Удалена старая сборка')
+    removeOutdir: createLogger("[ESBuild]" /* prefix.default */, '♻️ Удалена старая сборка'),
+    cacheCreated: createLogger("[ESBuild]" /* prefix.default */, '📂 Папка Cache успешно создана')
 };
 exports.plugin = {
     name: 'watch-messages',

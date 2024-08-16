@@ -13,16 +13,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.defaultConfig = void 0;
-// @ts-ignore
 const postcss_sort_media_queries_1 = __importDefault(require("postcss-sort-media-queries"));
 const esbuild_sass_plugin_1 = require("esbuild-sass-plugin");
 const postcss_1 = __importDefault(require("postcss"));
 const autoprefixer_1 = __importDefault(require("autoprefixer"));
 const esbuild_plugin_alias_path_1 = require("esbuild-plugin-alias-path");
-const clear_folder_js_1 = require("./plugins/clear-folder.js");
-const logger_js_1 = require("./plugins/logger.js");
+const clear_folder_1 = require("./plugins/clear-folder");
+const logger_1 = require("./plugins/logger");
+const create_cache_folder_1 = require("./plugins/create-cache-folder");
 const defaultConfig = (props) => {
-    const { outdir, entryPoints, tsconfig, isDevelopment, aliases } = props;
+    const { outdir, entryPoints, tsconfig, isDevelopment, aliases, aspCachePath } = props;
     return {
         outdir,
         entryPoints,
@@ -33,7 +33,8 @@ const defaultConfig = (props) => {
         sourcemap: isDevelopment,
         charset: 'utf8',
         plugins: [
-            clear_folder_js_1.clearFolder,
+            clear_folder_1.clearFolder,
+            (0, create_cache_folder_1.createCacheFolder)(aspCachePath),
             (0, esbuild_plugin_alias_path_1.aliasPath)({ alias: aliases }),
             (0, esbuild_sass_plugin_1.sassPlugin)({
                 transform(source) {
@@ -59,7 +60,7 @@ const defaultConfig = (props) => {
                     });
                 },
             },
-            logger_js_1.plugin
+            logger_1.plugin
         ],
         legalComments: isDevelopment ? 'eof' : 'none',
         drop: isDevelopment ? [] : ['console', 'debugger'],
