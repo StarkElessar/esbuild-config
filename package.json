@@ -9,9 +9,13 @@
 	"keywords": [
 		"package"
 	],
+	"main": "dist/index.js",
 	"exports": {
-		".": "./src/index.ts",
-		"./dist/index.js": "./dist/index.js"
+		".": {
+			"import": "./dist/index.js",
+			"require": "./dist/index.js"
+		},
+		"./dist": "./dist/index.js"
 	},
 	"author": "Sergei Chevdar",
 	"license": "ISC",
