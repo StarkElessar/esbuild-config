@@ -10,7 +10,8 @@
 		"package"
 	],
 	"exports": {
-		".": "./src/index.ts"
+		".": "./src/index.ts",
+		"./dist/index.js": "./dist/index.js"
 	},
 	"author": "Sergei Chevdar",
 	"license": "ISC",
