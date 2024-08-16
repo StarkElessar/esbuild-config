@@ -2,12 +2,11 @@
 	"name": "esbuild-config",
 	"version": "0.0.1",
 	"description": "",
-	"type": "module",
 	"scripts": {
 		"build": "esbuild src/index.ts --bundle --outfile=dist/index.js --platform=node"
 	},
 	"keywords": ["package"],
-	"main": "dist/index.js",
+	"main": "dist/esbuild.js.js",
 	"types": "types/types.d.ts",
 	"author": "Sergei Chevdar",
 	"license": "ISC",
