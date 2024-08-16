@@ -3,12 +3,11 @@ import { defaultConfig } from './default-config';
 import { loggerMessages } from './plugins/logger';
 
 export const defineConfig = async (externalConfig: DefineConfig) => {
-	const isDevelopment = process.argv.includes('--development');
 	const config = defaultConfig(externalConfig);
 
 	const init = async () => {
 		try {
-			if (isDevelopment) {
+			if (externalConfig.isDevelopment) {
 				const context = await ESBuild.context(config);
 				await context.watch();
 			}
@@ -17,11 +16,11 @@ export const defineConfig = async (externalConfig: DefineConfig) => {
 			}
 		}
 		catch {
-			loggerMessages[isDevelopment ? 'watchRejected' : 'buildRejected']();
+			loggerMessages[externalConfig.isDevelopment ? 'watchRejected' : 'buildRejected']();
 			process.exit(1);
 		}
 		finally {
-			loggerMessages[isDevelopment ? 'watchFulfilled' : 'buildFulfilled']();
+			loggerMessages[externalConfig.isDevelopment ? 'watchFulfilled' : 'buildFulfilled']();
 		}
 	};
 
