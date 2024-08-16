@@ -1,7 +1,7 @@
 ﻿import { Plugin } from "esbuild";
 import { existsSync, rmSync } from 'node:fs';
 
-import { loggerMessages} from "./logger";
+import { loggerMessages} from "./logger.js";
 
 export const clearFolder: Plugin = {
     name: 'clear-folder',

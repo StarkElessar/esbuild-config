@@ -1,1 +1,1 @@
-export { defineConfig } from './esbuild';
+export { defineConfig } from './esbuild.js';

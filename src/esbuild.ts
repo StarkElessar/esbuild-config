@@ -1,6 +1,6 @@
 import ESBuild from 'esbuild';
-import { defaultConfig } from './default-config';
-import { loggerMessages } from './plugins/logger';
+import { defaultConfig } from './default-config.js';
+import { loggerMessages } from './plugins/logger.js';
 
 export const defineConfig = async (externalConfig: DefineConfig) => {
 	const config = defaultConfig(externalConfig);

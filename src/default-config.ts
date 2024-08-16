@@ -5,8 +5,8 @@ import autoprefixer from 'autoprefixer';
 import postcssSortMediaQueries from 'postcss-sort-media-queries';
 import { aliasPath } from 'esbuild-plugin-alias-path';
 
-import { clearFolder } from './plugins/clear-folder';
-import { plugin as loggerPlugin } from './plugins/logger';
+import { clearFolder } from './plugins/clear-folder.js';
+import { plugin as loggerPlugin } from './plugins/logger.js';
 
 export const defaultConfig = (props: DefineConfig): BuildOptions => {
     const { outdir, entryPoints, tsconfig, isDevelopment, aliases } = props;
