@@ -1,0 +1,11 @@
+{
+	"name": "esbuild-config",
+	"version": "0.0.1",
+	"description": "",
+	"type": "module",
+	"keywords": [
+		"package"
+	],
+	"author": "Sergei Chevdar",
+	"license": "ISC"
+}
