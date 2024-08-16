@@ -1,17 +1,17 @@
-﻿// @ts-ignore
-import postcssSortMediaQueries from 'postcss-sort-media-queries';
+﻿import postcssSortMediaQueries from 'postcss-sort-media-queries';
 import { BuildOptions } from 'esbuild';
 import { sassPlugin } from 'esbuild-sass-plugin';
 import postcss from 'postcss';
 import autoprefixer from 'autoprefixer';
 import { aliasPath } from 'esbuild-plugin-alias-path';
 
-import { clearFolder } from './plugins/clear-folder.js';
-import { plugin as loggerPlugin } from './plugins/logger.js';
 import { DefineConfig } from '../types/types';
+import { clearFolder } from './plugins/clear-folder';
+import { plugin as loggerPlugin } from './plugins/logger';
+import { createCacheFolder } from './plugins/create-cache-folder';
 
 export const defaultConfig = (props: DefineConfig): BuildOptions => {
-    const { outdir, entryPoints, tsconfig, isDevelopment, aliases } = props;
+    const { outdir, entryPoints, tsconfig, isDevelopment, aliases, aspCachePath } = props;
 
     return {
         outdir,
@@ -24,6 +24,7 @@ export const defaultConfig = (props: DefineConfig): BuildOptions => {
         charset: 'utf8',
         plugins: [
             clearFolder,
+            createCacheFolder(aspCachePath),
             aliasPath({ alias: aliases }),
             sassPlugin({
                 async transform(source) {

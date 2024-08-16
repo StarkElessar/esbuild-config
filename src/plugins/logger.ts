@@ -27,7 +27,8 @@ export const loggerMessages = {
     watchStarted: createLogger(prefix.watch, 'Началась сборка файлов'),
     watchFinished: createLogger(prefix.watch, 'Закончилась сборка файлов'),
 
-    removeOutdir: createLogger(prefix.default, '♻️ Удалена старая сборка')
+    removeOutdir: createLogger(prefix.default, '♻️ Удалена старая сборка'),
+    cacheCreated: createLogger(prefix.default, '📂 Папка Cache успешно создана')
 }
 
 export const plugin: Plugin = {

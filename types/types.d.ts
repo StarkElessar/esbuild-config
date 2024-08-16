@@ -4,6 +4,7 @@ export interface DefineConfig {
 	entryPoints: string[];
 	outdir: string;
 	tsconfig?: string;
+	aspCachePath?: string;
 }
 
 export declare module 'esbuild-config' {
