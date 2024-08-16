@@ -1,6 +1,4 @@
-declare module 'postcss-sort-media-queries';
-
-interface DefineConfig {
+export interface DefineConfig {
 	isDevelopment: boolean;
 	aliases: Record<string, string>;
 	entryPoints: string[];

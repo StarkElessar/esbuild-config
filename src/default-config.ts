@@ -1,12 +1,14 @@
-﻿import { BuildOptions } from 'esbuild';
+﻿// @ts-ignore
+import postcssSortMediaQueries from 'postcss-sort-media-queries';
+import { BuildOptions } from 'esbuild';
 import { sassPlugin } from 'esbuild-sass-plugin';
 import postcss from 'postcss';
 import autoprefixer from 'autoprefixer';
-import postcssSortMediaQueries from 'postcss-sort-media-queries';
 import { aliasPath } from 'esbuild-plugin-alias-path';
 
 import { clearFolder } from './plugins/clear-folder.js';
 import { plugin as loggerPlugin } from './plugins/logger.js';
+import { DefineConfig } from '../types/types';
 
 export const defaultConfig = (props: DefineConfig): BuildOptions => {
     const { outdir, entryPoints, tsconfig, isDevelopment, aliases } = props;

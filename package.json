@@ -6,15 +6,9 @@
 	"scripts": {
 		"build": "esbuild src/index.ts --bundle --outfile=dist/index.js --platform=node"
 	},
-	"keywords": [
-		"package"
-	],
-	"module": "./src/index.ts",
-	"exports": {
-		".": {
-			"import": "./src/index.ts"
-		}
-	},
+	"keywords": ["package"],
+	"main": "dist/index.js",
+	"types": "types/types.d.ts",
 	"author": "Sergei Chevdar",
 	"license": "ISC",
 	"dependencies": {

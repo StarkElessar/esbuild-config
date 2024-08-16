@@ -1,12 +1,12 @@
-﻿import esbuild from "esbuild";
+﻿import { Plugin, BuildResult } from 'esbuild';
 
 const enum prefix {
-    default = "[ESBuild]",
-    watch = "[ESBuild Watch]"
+    default = '[ESBuild]',
+    watch = '[ESBuild Watch]'
 }
 
 function createLogger(prefix: prefix, message: string, isError = false) {
-    return (response?: esbuild.BuildResult<esbuild.BuildOptions> | void) => {
+    return (response?: BuildResult | void) => {
         console.log(
             isError ? '\x1b[31m%s\x1b[0m' : '\x1b[32m%s\x1b[0m', 
             `${new Date().toLocaleTimeString()} ${prefix}: ${message}`
@@ -27,10 +27,10 @@ export const loggerMessages = {
     watchStarted: createLogger(prefix.watch, 'Началась сборка файлов'),
     watchFinished: createLogger(prefix.watch, 'Закончилась сборка файлов'),
 
-    removeOutdir: createLogger(prefix.default, "♻️ Удалена старая сборка")
+    removeOutdir: createLogger(prefix.default, '♻️ Удалена старая сборка')
 }
 
-export const plugin: esbuild.Plugin = {
+export const plugin: Plugin = {
     name : 'watch-messages',
     setup (build) {
         build.onStart(loggerMessages.watchStarted);
