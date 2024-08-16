@@ -9,12 +9,11 @@
 	"keywords": [
 		"package"
 	],
-	"main": "src/index.ts",
+	"module": "./src/index.ts",
 	"exports": {
 		".": {
 			"import": "./src/index.ts"
-		},
-		"./src": "./src/index.ts"
+		}
 	},
 	"author": "Sergei Chevdar",
 	"license": "ISC",
