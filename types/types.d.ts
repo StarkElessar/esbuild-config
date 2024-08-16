@@ -6,8 +6,6 @@ export interface DefineConfig {
 	tsconfig?: string;
 }
 
-type DefineConfigFunction = (externalConfig: DefineConfig) => Promise<void>;
-
 export declare module 'esbuild-config' {
-	export const defineConfig: DefineConfigFunction;
+	export const defineConfig: (externalConfig: DefineConfig) => void;
 }
