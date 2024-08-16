@@ -3,6 +3,9 @@
 	"version": "0.0.1",
 	"description": "",
 	"type": "module",
+	"scripts": {
+		"build": "esbuild src/index.ts --bundle --outfile=dist/index.js --platform=node"
+	},
 	"keywords": [
 		"package"
 	],
@@ -11,12 +14,11 @@
 	},
 	"author": "Sergei Chevdar",
 	"license": "ISC",
-	"devDependencies": {
-		"@types/node": "^22.3.0",
-		"ts-node": "^10.9.2",
-		"typescript": "^5.5.4"
-	},
 	"dependencies": {
+		"@types/node": "^22.3.0",
+		"postcss-modules": "^6.0.0",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.5.4",
 		"autoprefixer": "^10.4.20",
 		"esbuild": "^0.23.0",
 		"esbuild-plugin-alias-path": "^2.0.2",

@@ -13,7 +13,7 @@
 		"noImplicitReturns": true,
 		"noFallthroughCasesInSwitch": true,
 		"moduleResolution": "node",
-		"noImplicitAny": false,
+		"noImplicitAny": false
 	},
 	"include": [
 		"./src/**/*.ts",
