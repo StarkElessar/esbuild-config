@@ -6,6 +6,22 @@
 	"keywords": [
 		"package"
 	],
+	"exports": {
+		".": "./src/index.ts"
+	},
 	"author": "Sergei Chevdar",
-	"license": "ISC"
+	"license": "ISC",
+	"devDependencies": {
+		"@types/node": "^22.3.0",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.5.4"
+	},
+	"dependencies": {
+		"autoprefixer": "^10.4.20",
+		"esbuild": "^0.23.0",
+		"esbuild-plugin-alias-path": "^2.0.2",
+		"esbuild-sass-plugin": "^3.3.1",
+		"postcss": "^8.4.41",
+		"postcss-sort-media-queries": "^5.2.0"
+	}
 }

@@ -1,0 +1,30 @@
+{
+	"compilerOptions": {
+		"strict": true,
+		"target": "ES6",
+		"module": "ESNext",
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"allowJs": true,
+		"noEmit": true,
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"moduleResolution": "node",
+		"noImplicitAny": false,
+	},
+	"include": [
+		"./src/**/*.ts",
+	],
+	"exclude": [
+		"node_modules"
+	],
+	"ts-node": {
+		"compilerOptions": {
+			"module": "CommonJS",
+			"target": "ESNext"
+		}
+	}
+}
